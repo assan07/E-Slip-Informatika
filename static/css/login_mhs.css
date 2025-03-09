@@ -1,0 +1,94 @@
+ /* Fullscreen Layout */
+ body,
+ html {
+   height: 100%;
+   margin: 0;
+   background-color: #f8f9fa;
+   font-family: "Montserrat", sans-serif;
+ }
+
+ .container-body {
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+ }
+
+ /* Bagian kiri */
+ .left-side {
+   width: 50%;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 40px;
+   text-align: center;
+ }
+
+ .logo img {
+   width: 100%;
+   height: 100%;
+   margin-bottom: 20px;
+ }
+
+ /* Bagian kanan */
+ .right-side {
+   width: 50%;
+   background: linear-gradient(120deg, #a1e3f9, #578fca);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   color: white;
+ }
+
+ .intro-page {
+   display: none;
+ }
+
+ .form-container {
+   backdrop-filter: blur(10px);
+   padding: 30px;
+   border-radius: 8px;
+   width: 80%;
+   max-width: 500px;
+   font-weight: bold;
+   color: #402e7a;
+ }
+
+ .form-control {
+   font-size: 18px;
+   padding: 12px;
+   border-radius: 6px;
+ }
+
+ .btn {
+   font-weight: bold;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .btn-go {
+   display: flex;
+   gap: 10px;
+ }
+
+ /* Responsif untuk HP */
+ @media (max-width: 768px) {
+   .left-side {
+     display: none;
+   }
+
+   .right-side {
+     width: 100%;
+   }
+
+   .intro-page {
+     display: block;
+   }
+
+   .form-container {
+     width: 90%;
+     max-width: 350px;
+   }
+ }

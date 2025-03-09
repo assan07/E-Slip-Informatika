@@ -1,0 +1,24 @@
+# Virtual environment
+venv/
+
+# Editor config
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# Log files
+*.log
+
+# Node.js dependencies
+node_modules/

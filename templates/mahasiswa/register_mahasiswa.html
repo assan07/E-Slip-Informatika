@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - E-Slip Universitas Dayanu Ikhsanuddin</title>
+    <link
+      href="{{ url_for('static', filename='css/tailwind.css') }}"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename='css/register_mahasiswa.css') }}"
+    />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container mx-auto px-4">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white shadow-lg rounded-lg p-6"
+      >
+        <!-- Bagian kiri -->
+        <div class="flex flex-col items-center justify-center p-6">
+          <div class="mb-4">
+            <img
+              src="{{ url_for('static', filename='img/icon/logo.png') }}"
+              alt="gambar utama"
+              class="w-32 h-32"
+            />
+          </div>
+          <h2 class="text-2xl font-bold mb-2">
+            Selamat datang di aplikasi E-Slip
+          </h2>
+          <h3 class="text-lg text-gray-600">Universitas Dayanu Ikhsanuddin</h3>
+        </div>
+
+        <!-- Bagian kanan -->
+        <div class="p-6">
+          <h3 class="text-center text-xl font-bold mb-6">
+            Registrasi Mahasiswa
+          </h3>
+          <form
+            action="{{ url_for('register_mahasiswa') }}"
+            method="POST"
+            class="space-y-4"
+          >
+            <div>
+              <label for="namaMahasiswa" class="block text-gray-700 font-medium"
+                >Nama Mahasiswa</label
+              >
+              <input
+                type="text"
+                id="namaMahasiswa"
+                name="namaMahasiswa"
+                placeholder="Masukkan Nama Mahasiswa"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label for="nimMahasiswa" class="block text-gray-700 font-medium"
+                >NIM Mahasiswa</label
+              >
+              <input
+                type="text"
+                id="nimMahasiswa"
+                name="nimMahasiswa"
+                placeholder="Masukkan NIM"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="emailMahasiswa"
+                class="block text-gray-700 font-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="emailMahasiswa"
+                name="emailMahasiswa"
+                placeholder="Masukkan Email"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                for="passwordMahasiswa"
+                class="block text-gray-700 font-medium"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="passwordMahasiswa"
+                name="passwordMahasiswa"
+                placeholder="Masukkan Password"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 password-field"
+              />
+            </div>
+            <div>
+              <label
+                for="confirmPassword"
+                class="block text-gray-700 font-medium"
+                >Konfirmasi Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Konfirmasi Password"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 password-field"
+              />
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="showPassword" class="mr-2" />
+              <label for="showPassword" class="text-gray-700"
+                >Tampilkan Password</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg"
+            >
+              Daftar
+            </button>
+            <div class="text-center mt-3">
+              <a href="/" class="text-blue-500 hover:underline"
+                >Sudah Punya Akun? Login</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const passwordFields = document.querySelectorAll(".password-field");
+        document
+          .getElementById("showPassword")
+          .addEventListener("change", function () {
+            passwordFields.forEach((input) => {
+              input.type = this.checked ? "text" : "password";
+            });
+          });
+      });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  </body>
+</html>

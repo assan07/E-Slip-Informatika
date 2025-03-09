@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link
+      href="{{ url_for('static', filename='css/tailwind.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login_mhs.css') }}"
+    />
+  </head>
+
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4">
+      <div class="bg-white shadow-lg rounded-lg p-6 max-w-4xl w-full">
+        <h2 class="text-center text-2xl font-bold mb-6">Register Staf Loket</h2>
+        <form
+          action="{{ url_for('register_staf_loket') }}"
+          method="POST"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div>
+            <label for="nama_staf_loket" class="block text-gray-700 font-medium"
+              >Nama Staf Loket</label
+            >
+            <input
+              type="text"
+              id="nama_staf_loket"
+              name="nama_staf_loket"
+              placeholder="Masukkan Nama Lengkap"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label for="nip_staf_loket" class="block text-gray-700 font-medium"
+              >NIP Staf Loket</label
+            >
+            <input
+              type="text"
+              id="nip_staf_loket"
+              name="nip_staf_loket"
+              placeholder="Masukkan NIP"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label
+              for="email_staf_loket"
+              class="block text-gray-700 font-medium"
+              >Email Staf Loket</label
+            >
+            <input
+              type="email"
+              id="email_staf_loket"
+              name="email_staf_loket"
+              placeholder="Masukkan Email"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label for="no_staf_loket" class="block text-gray-700 font-medium"
+              >No. HP Staf Loket</label
+            >
+            <input
+              type="text"
+              id="no_staf_loket"
+              name="no_staf_loket"
+              placeholder="Masukkan No. HP"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label
+              for="password_staf_loket"
+              class="block text-gray-700 font-medium"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password_staf_loket"
+              name="password_staf_loket"
+              placeholder="Masukkan Password"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label
+              for="confirm_password"
+              class="block text-gray-700 font-medium"
+              >Konfirmasi Password</label
+            >
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Konfirmasi Password"
+              required
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div class="md:col-span-2 text-left">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-full md:w-auto"
+            >
+              Daftar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Tampilkan atau sembunyikan password
+      document
+        .getElementById("showPassword")
+        .addEventListener("change", function () {
+          var passwordInput = document.getElementById("passwordMahasiswa");
+          passwordInput.type = this.checked ? "text" : "password";
+        });
+
+      document
+        .getElementById("nimMahasiswa")
+        .addEventListener("focus", function () {
+          var errorNim = document.querySelector("#nimMahasiswa + span");
+          if (errorNim) errorNim.textContent = "";
+        });
+
+      document
+        .getElementById("passwordMahasiswa")
+        .addEventListener("focus", function () {
+          var errorPassword = document.querySelector(
+            "#passwordMahasiswa + span"
+          );
+          if (errorPassword) errorPassword.textContent = "";
+        });
+    </script>
+  </body>
+</html>
